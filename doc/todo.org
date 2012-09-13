@@ -1,0 +1,50 @@
+* TODO fr the swarmcoding [0%]
+** example
+
+
+*** example
+
+00:00:10-00:00:20
+Hello John
+
+00:00:30-00:00:50
+Hello Stella
+How are you?
+
+00:01:00-00:01:30
+Cool dude
+
+*** proposition
+
+**** map 
+{"00:00:10-00:00:20" "Hello John"
+...}
+
+**** tuple vector
+[["00:00:10-00:00:20" "Hello John"]
+ 
+...]
+
+**** triple vector
+[[#line [3 4] "Hello John"]]  
+
+*** input
+
+| time | en   | fr   |
+|------+------+------|
+|    1 | a-en | b-fr |
+|    2 | b-en | c-fr |
+|    3 | d-en | d-fr |
+|    4 | e-en |      |
+|    5 |      | e-fr |
+
+*** output
+
+| time | en   | fr   | result | c alt1 | c alt2  |
+|------+------+------+--------+--------+---------|
+|    1 | a-en | b-fr | a-en   |        |         |
+|    2 | b-en | c-fr | b-fr   | bc-fr  |         |
+|      |      |      |        |        | [] c-fr |
+|    3 | d-en | d-fr | d-fr   |        |         |
+|    4 | e-en |      | e-fr   |        |         |
+|    5 |      | e-fr |        |        |         |
